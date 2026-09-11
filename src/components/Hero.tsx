@@ -4,13 +4,13 @@ const Hero = () => {
     return (
         <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12">
         <div className="max-w-xl text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
             Build Your Ideal
             <br />
             <span className="text-gradient-brand">Development Stack</span>
             </h1>
 
-            <p className="mt-6 text-gray-500 text-base md:text-lg leading-relaxed">
+            <p className="mt-6 text-lg md:text-xl text-gray-500 leading-relaxed">
             Explore frontend, backend, database, and tooling options, compare
             them side by side, and put together the stack that fits your next
             project.
@@ -27,11 +27,7 @@ const Hero = () => {
         </div>
 
         <div className="flex-shrink-0">
-            <img
-            src={BannerStack}
-            alt="Development stack illustration"
-            className="w-64 sm:w-80 md:w-[420px]"
-            />
+            <img src={BannerStack} alt="Development stack illustration" className="w-80 sm:w-96 md:w-[480px]"/>
         </div>
         </section>
     );
