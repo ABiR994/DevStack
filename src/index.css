@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/*
+  Single source of truth for the brand gradient (orange -> pink -> violet).
+  Used for: brand name text, hero heading highlight, and primary buttons.
+  Change these three stops to re-theme the whole UI.
+*/
+:root {
+  --brand-gradient: linear-gradient(90deg, #f97316, #ec4899, #8b5cf6);
+}
+
+.text-gradient-brand {
+  background-image: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.bg-gradient-brand {
+  background-image: var(--brand-gradient);
+}
