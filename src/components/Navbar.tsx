@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
-const navLinks = ["Home", "Technologies", "Projects", "About", "Contact"];
+const navLinks = [
+  { label: "Home", href: "#" },
+  { label: "Technologies", href: "#technologies" },
+  { label: "Projects", href: "#" },
+  { label: "About", href: "#" },
+  { label: "Contact", href: "#" },
+];
 
 const Logo = () => (
   <a href="/" className="flex items-center gap-2">
@@ -37,15 +43,16 @@ const Navbar = () => {
           </div>
           <ul className="hidden md:flex items-center gap-8 font-medium text-gray-700">
             {navLinks.map((link) => (
-              <li key={link}>
-                <a href="#"
+              <li key={link.label}>
+                <a
+                  href={link.href}
                   className={
-                    link === "Home"
+                    link.label === "Home"
                       ? "text-pink-600 font-semibold"
                       : "hover:text-pink-600 transition-colors"
                   }
                 >
-                  {link}
+                  {link.label}
                 </a>
               </li>
             ))}
@@ -67,9 +74,13 @@ const Navbar = () => {
       {isMenuOpen && (
         <ul className="md:hidden flex flex-col gap-4 px-6 pb-4 font-medium text-gray-700">
           {navLinks.map((link) => (
-            <li key={link}>
-              <a href="#" onClick={() => setIsMenuOpen(false)} className={link === "Home" ? "text-pink-600 font-semibold" : ""}>
-                {link}
+            <li key={link.label}>
+              <a
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={link.label === "Home" ? "text-pink-600 font-semibold" : ""}
+              >
+                {link.label}
               </a>
             </li>
           ))}
