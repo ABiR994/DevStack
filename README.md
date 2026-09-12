@@ -133,22 +133,22 @@ npm run preview
 
 ## 🧠 React Concepts
 
-### 1. What is JSX, and why is it used in React?
+### i. What is JSX, and why is it used in React?
 JSX lets you write HTML-like markup directly inside JavaScript/TypeScript files. It's used because it makes component structure easy to read and keeps the UI and the logic that drives it in one place, instead of switching between separate template and script files.
 
-### 2. What is the difference between props and state?
+### ii. What is the difference between props and state?
 Props are data passed into a component from its parent — the component receiving them can't change them. State is data a component manages itself and can update over time. In this project, `TechCard` receives `technology`, `isAdded`, and `onAdd` as props from `Technologies`, while `Technologies` itself holds the `stack` array in its own state.
 
-### 3. What does the `useState` hook do, and where did you use it in this project?
+### iii. What does the `useState` hook do, and where did you use it in this project?
 `useState` lets a component hold a value that can change and re-render the UI when it does. I used it in `Technologies.tsx` to track the fetched `technologies` list, the `stack` of selected items, and the `isLoading` flag, and in `Navbar.tsx` to track whether the mobile menu is open.
 
-### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
+### iv. What does the `useEffect` hook do, and why did you need it to load the JSON data?
 `useEffect` runs side effects — code that reaches outside the component, like a network request — after the component renders. Fetching is asynchronous and shouldn't run during render itself, so I used `useEffect` with an empty dependency array in `Technologies.tsx` to fetch `technologies.json` exactly once when the component first mounts.
 
-### 5. Why does every item in a `.map()` list need a unique `key` prop?
+### v. Why does every item in a `.map()` list need a unique `key` prop?
 React uses the `key` to tell items apart between renders, so it knows which items were added, removed, or reordered instead of re-rendering the entire list from scratch. Without a stable key, React can mix up which DOM node belongs to which piece of data. I used each technology's `id` as the key for `TechCard` and `YourStack` list items.
 
-### 6. What is conditional rendering? Show one place you used it.
+### vi. What is conditional rendering? Show one place you used it.
 Conditional rendering means showing different UI depending on some condition, instead of always rendering the same thing. I used it in `YourStack.tsx` to show a dashed "Your stack is empty." placeholder when there are no items, and the actual list of stack items once there are:
 
 ```tsx
@@ -165,7 +165,7 @@ Conditional rendering means showing different UI depending on some condition, in
 )}
 ```
 
-### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+### vii. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 A parent passes data down to a child as props. To send something back up, the parent passes a function down as a prop, and the child calls that function when something happens. In this project, `Technologies` passes `onAdd={handleAddToStack}` down to each `TechCard`; when the user clicks "Add to Stack", the card calls `onAdd(technology)`, which runs `handleAddToStack` back in the parent and updates the `stack` state there.
 
 ---
