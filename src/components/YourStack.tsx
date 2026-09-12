@@ -11,7 +11,7 @@ const YourStack = ({ stack, onRemove, onRemoveAll }: YourStackProps) => {
   const isEmpty = stack.length === 0;
 
   return (
-    <aside className="w-80 flex-shrink-0 rounded-2xl border border-gray-200 bg-white p-5">
+    <aside className="w-full lg:w-80 flex-shrink-0 rounded-2xl border border-gray-200 bg-white p-5">
       <h3 className="text-lg font-bold text-gray-900">Your Stack</h3>
       <p className="mt-1 text-sm text-gray-400">
         {isEmpty

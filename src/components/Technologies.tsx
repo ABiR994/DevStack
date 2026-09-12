@@ -43,21 +43,21 @@ const Technologies = () => {
   };
 
   return (
-    <section id="technologies" className="max-w-7xl mx-auto px-6 py-16">
-      <h2 className="text-3xl font-extrabold text-gray-900">
+    <section id="technologies" className="max-w-7xl mx-auto px-6 py-12 md:py-16">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900">
         Explore the <span className="text-gradient-brand">Technologies</span>
       </h2>
       <p className="mt-2 text-gray-500">
         Pick one technology per category to build your ideal stack.
       </p>
 
-      <div className="mt-10 flex items-start gap-6">
+      <div className="mt-10 flex flex-col lg:flex-row items-start gap-6">
         {isLoading ? (
           <div className="flex flex-1 justify-center py-24">
             <span className="loading loading-spinner loading-lg text-primary" />
           </div>
         ) : (
-          <div className="grid flex-1 grid-cols-3 gap-6">
+          <div className="grid flex-1 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {technologies.map((technology) => (
               <TechCard
                 key={technology.id}
