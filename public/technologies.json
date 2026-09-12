@@ -44,7 +44,7 @@
     "name": "Express.js",
     "category": "Backend",
     "description": "A minimal and flexible Node.js web application framework for building APIs and web servers.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Express-JS.svg",
+    "icon": "https://cdn.simpleicons.org/express",
     "rating": 4.6,
     "difficulty": "Beginner-Friendly",
     "badge": "Lightweight"
